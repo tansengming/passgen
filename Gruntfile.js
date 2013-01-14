@@ -1,6 +1,5 @@
 module.exports = function( grunt ) {
   'use strict';
-  grunt.loadNpmTasks('grunt-haml')
   //
   // Grunt configuration:
   //
@@ -14,13 +13,6 @@ module.exports = function( grunt ) {
     // specify an alternate install location for Bower
     bower: {
       dir: 'app/components'
-    },
-
-   haml: {
-      index: {
-        src: "app/index.haml",
-        dest: "app/index.html"
-      }
     },
 
     // Coffee to JS compilation
@@ -61,12 +53,6 @@ module.exports = function( grunt ) {
 
     // default watch configuration
     watch: {
-      haml: {
-          files: [
-            'app/*.haml'
-          ],
-          tasks: 'haml'
-      },
       coffee: {
         files: 'app/scripts/**/*.coffee',
         tasks: 'coffee reload'

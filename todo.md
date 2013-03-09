@@ -1,0 +1,3 @@
+- port JS
+- app cache
+- remove twitter bootstrap

@@ -1,4 +1,7 @@
 - package to github pages
-- app cache
+- clear cache
+- always clear cache
+- save list of addresses
+- X app cache
 - X remove twitter bootstrap
 - X port JS

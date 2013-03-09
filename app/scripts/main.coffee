@@ -15,7 +15,10 @@ password = ->
 
 updateHash = ->
   $('#hash-field').val(Helper.hash_val(password(), niceSitename()))
-  $('#site-hint small').html('Hashed with ' + niceSitename())
+  if niceSitename()
+    $('#site-hint').html('Hashed with ' + niceSitename())
+  else
+    $('#site-hint').html('Please enter a valid URL')
 
 saveToLocalstorage = ->
   localStorage.masterpassword = password()

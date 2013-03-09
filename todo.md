@@ -1,6 +1,7 @@
+- apple icon
+- add info bar
 - package to github pages
-- clear cache
-- always clear cache
+- toggle cache
 - save list of addresses
 - X app cache
 - X remove twitter bootstrap

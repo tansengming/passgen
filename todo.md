@@ -1,3 +1,4 @@
-- port JS
+- package to github pages
 - app cache
-- remove twitter bootstrap
+- X remove twitter bootstrap
+- X port JS

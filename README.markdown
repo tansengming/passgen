@@ -1,4 +1,4 @@
-# Password Generator in Ratchet
+# Password Generator
 
 This is a [tiny one page app](http://tansengming.github.com/passgen) that creates a unique password for your sites based on the site URL and a master password.
 

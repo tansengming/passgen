@@ -1,0 +1,7 @@
+{
+  "name": "passgen-2",
+  "private": true,
+  "dependencies": {
+    "ratchet": "2.0.2"
+  }
+}

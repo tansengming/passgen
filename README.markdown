@@ -12,3 +12,11 @@ Since this a mobile version for [Nic Wolff's Password Generator](http://angel.ne
 </blockquote>
 
 There's also a deprecated version [made with jQuery Mobile](https://github.com/tansengming/passgen-jqm)
+
+## Development Quickstart
+
+1. `npm install`
+1. `./node_modules/bower/bin/bower install install`
+1. `node_modules/gulp/bin/gulp.js serve`
+
+Voila! The app should now be running at http://localhost:9000/

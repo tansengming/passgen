@@ -16,14 +16,19 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-precomposed.png">
 
-    <!-- build:css styles/screen.css -->
-    <link rel="stylesheet" href="components/ratchet/dist/ratchet.css">
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/ratchet/dist/css/ratchet.css">
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
     <!-- build:js scripts/heads.js -->
     <script src="scripts/vendor/modernizr.min.js"></script>
-    <script src="components/ratchet/dist/ratchet.js"></script>
     <!-- endbuild -->
 
     <!-- Intro paragraph styles. Delete once you start using this page -->
@@ -81,9 +86,15 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
 
-    <!-- build:js scripts/scripts.js -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/ratchet/dist/js/ratchet.js"></script>
+    <!-- endbower -->
     <script src="scripts/vendor/md5.js"></script>
     <script src="scripts/vendor/URI.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/scripts.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
   </body>

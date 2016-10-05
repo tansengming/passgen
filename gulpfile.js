@@ -6,6 +6,12 @@ var gulp = require('gulp');
 // load plugins
 var $ = require('gulp-load-plugins')();
 
+gulp.task('deploy', ['build'], () => {
+  return gulp.src('dist')
+    .pipe($.subtree())
+    .pipe($.clean());
+});
+
 gulp.task('styles', function () {
     return gulp.src('app/styles/main.scss')
         .pipe($.rubySass({
@@ -24,7 +30,7 @@ gulp.task('scripts', () => {
 });
 
 gulp.task('jshint', function () {
-    return gulp.src('app/scripts/**/*.js')
+    return gulp.src('app/scripts/*.js')
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'))
         .pipe($.jshint.reporter('fail'))

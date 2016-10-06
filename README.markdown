@@ -17,6 +17,6 @@ There's also a deprecated version [made with jQuery Mobile](https://github.com/t
 
 1. `npm install`
 1. `./node_modules/bower/bin/bower install`
-1. `node_modules/gulp/bin/gulp.js serve`
+1. `node_modules/gulp/bin/gulp.js watch`
 
 Voila! The app should now be running at http://localhost:9000/

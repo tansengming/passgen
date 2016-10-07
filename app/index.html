@@ -60,20 +60,18 @@
         <p class="welcome">Pick a master password to generate passwords for other sites</p>
       </div>
 
-      <form>
-        <div class="input-group">
-          <div class="input-row">
-            <label>Master Password</label>
-            <input type="password" placeholder='Password' id='master-password-field'>
-          </div>
-          <div class="input-row">
-            <label>URL</label>
-            <input type="url" value="http://example.com" id='url-field'>
-          </div>
-          <div class="input-row">
-            <label>Generated Password</label>
-            <input type="text" placeholder='890abcef' id='hash-field'>
-          </div>
+      <form class="input-group">
+        <div class="input-row">
+          <label>Master Password</label>
+          <input type="password" placeholder='Password' id='master-password-field'>
+        </div>
+        <div class="input-row">
+          <label>URL</label>
+          <input type="url" value="http://example.com" id='url-field'>
+        </div>
+        <div class="input-row">
+          <label>Generated Password</label>
+          <input type="text" placeholder='890abcef' id='hash-field' readonly="true">
         </div>
       </form>
       <div class="content-padded">

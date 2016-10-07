@@ -16,7 +16,7 @@ password = ->
 updateHash = ->
   $('#hash-field').val(Helper.hash_val(password(), niceSitename()))
   if niceSitename()
-    $('#site-hint').html('Generated with ' + niceSitename())
+    $('#site-hint').html('Generated from ' + niceSitename())
   else
     $('#site-hint').html('Please enter a valid URL')
 

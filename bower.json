@@ -4,6 +4,7 @@
   "dependencies": {
     "ratchet": "2.0.2",
     "urijs": "uri.js#^1.18.2",
-    "js-md5": "^2.4.0"
+    "js-md5": "^2.4.0",
+    "jquery": "^3.1.1"
   }
 }

@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "ratchet": "2.0.2",
-    "urijs": "uri.js#^1.18.2"
+    "urijs": "uri.js#^1.18.2",
+    "js-md5": "^2.4.0"
   }
 }

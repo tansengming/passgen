@@ -19,12 +19,15 @@ password = ->
   $('#master-password-field').val()
 
 updateHash = ->
-  hasher = Helper.sha256_hash
+  hasher = if legacyMode() then Helper.md5_hash else Helper.sha256_hash
   $('#hash-field').val(hasher(password(), niceSitename()))
   if niceSitename()
     $('#site-hint').html('Generated from ' + niceSitename())
   else
     $('#site-hint').html('Please enter a valid URL')
+
+legacyMode = ->
+  $('#legacyToggle').hasClass('active')
 
 saveToLocalstorage = ->
   localStorage.masterpassword = password()
@@ -35,6 +38,10 @@ $('document').ready ->
     updateHash()
     saveToLocalstorage()
     false
+
+$('document').ready ->
+  document.querySelector('#legacyToggle').addEventListener 'toggle', ->
+    updateHash()
 
 $('document').ready ->
   if (localStorage.masterpassword)

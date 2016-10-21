@@ -1,8 +1,12 @@
 @Helper =
   url_val: (url) ->
     URI(url).domain().toLowerCase()
-  hash_val: (password, sitename) ->
-    md5(password + ':' + sitename).substr(0,8)
+  sha256_hash: (password, sitename) ->
+    str = password + ':' + sitename
+    CryptoJS.SHA256(str).toString(CryptoJS.enc.Hex).substr(0,8)
+  md5_hash: (password, sitename) ->
+    str = password + ':' + sitename
+    CryptoJS.MD5(str).toString(CryptoJS.enc.Hex).substr(0,8)
 
 sitename = ->
   $('#url-field').val()
@@ -14,7 +18,8 @@ password = ->
   $('#master-password-field').val()
 
 updateHash = ->
-  $('#hash-field').val(Helper.hash_val(password(), niceSitename()))
+  hasher = Helper.sha256_hash
+  $('#hash-field').val(hasher(password(), niceSitename()))
   if niceSitename()
     $('#site-hint').html('Generated from ' + niceSitename())
   else

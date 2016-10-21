@@ -6,10 +6,22 @@ var gulp = require('gulp');
 // load plugins
 var $ = require('gulp-load-plugins')();
 
-gulp.task('deploy', ['build'], () => {
+gulp.task('deploy', ['build_and_manifest'], () => {
   return gulp.src('dist')
     .pipe($.subtree())
     .pipe($.clean());
+});
+
+// because gulp runs tasks async
+gulp.task('build_and_manifest', ['build'], function(){
+  gulp.src(['dist/**'], { base: 'dist/' })
+    .pipe($.manifest({
+      hash: true,
+      network: ['*'],
+      filename: 'manifest.appcache',
+      exclude: 'manifest.appcache'
+     }))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('styles', function () {

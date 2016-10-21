@@ -3,7 +3,8 @@
     URI(url).domain().toLowerCase()
   sha256_hash: (password, sitename) ->
     str = password + ':' + sitename
-    CryptoJS.SHA256(str).toString(CryptoJS.enc.Hex).substr(0,8)
+    hash = CryptoJS.SHA256(str).toString(CryptoJS.enc.Hex)
+    hash.substr(0,3) + '-' + hash.substr(3,3) + '-' + hash.substr(6,3) + '-' + hash.substr(9,3)
   md5_hash: (password, sitename) ->
     str = password + ':' + sitename
     CryptoJS.MD5(str).toString(CryptoJS.enc.Hex).substr(0,8)

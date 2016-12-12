@@ -1,15 +1,7 @@
-blockquote {
-  padding-left: 1em;
-  padding-top: 10px;
-
-  p {
-    padding-top: 5px;
-  }
+body {
+  padding-top: 50px;
 }
 
-@media only screen and (max-width: 500px) {
-  label {
-    font-size: 3.5vw;
-    font-size: 3.5vw;
-  }
+.starter-template {
+  padding: 10px 0px;
 }

@@ -1,7 +1,0 @@
-bower_components
-test/bower_components
-.sass-cache
-node_modules
-temp
-.tmp
-.DS_Store

@@ -27,7 +27,7 @@ updateHash = ->
     $('#site-hint').html('Please enter a valid URL')
 
 legacyMode = ->
-  $('#legacyToggle').hasClass('active')
+  $('#legacyToggle').is(':checked')
 
 saveToLocalstorage = ->
   localStorage.masterpassword = password()
@@ -40,7 +40,7 @@ $('document').ready ->
     false
 
 $('document').ready ->
-  document.querySelector('#legacyToggle').addEventListener 'toggle', ->
+  $('#legacyToggle').change ->
     updateHash()
 
 $('document').ready ->

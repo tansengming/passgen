@@ -1,26 +1,19 @@
 <!DOCTYPE html>
-<html manifest='manifest.appcache'>
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
     <title>Passgen</title>
-
-    <!-- Sets initial viewport load and disables zooming  -->
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-    <!-- Set Apple icons for when prototype is saved to home screen -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-precomposed.png">
-
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="../bower_components/ratchet/dist/css/ratchet.css" />
-    <link rel="stylesheet" href="../bower_components/ratchet/dist/css/ratchet-theme-ios.css" />
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -30,70 +23,77 @@
 
     <!-- build:js scripts/heads.js -->
     <!-- bower:js -->
-    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- <script src="../bower_components/modernizr/modernizr.js"></script> -->
     <!-- endbower -->
     <!-- endbuild -->
-
-
-    <!-- Intro paragraph styles. Delete once you start using this page -->
-    <style type="text/css">
-        .welcome {
-          line-height: 1.5;
-          color: #555;
-        }
-    </style>
-    <script>
-        var _gaq=[['_setAccount','UA-2279020-7'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
   </head>
+
   <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Passgen</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-    <!-- Make sure all your bars are the first things in your <body> -->
-    <header class="bar bar-nav">
-      <a class="icon icon-info pull-right" href='info.html'></a>
-      <h1 class="title">Passgen</h1>
-    </header>
-
-    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
-    <div class="content">
-      <div class="content-padded">
-        <p class="welcome">Use a master password to generate passwords for all sites</p>
+    <div class="container-fluid">
+      <div class="starter-template">
+        <p class="lead">Use a master password to generate passwords for all sites</p>
       </div>
 
-      <form class="input-group">
-        <div class="input-row">
-          <label class='long'>Master Password</label>
-          <input type="password" placeholder='Password' id='master-password-field'>
-        </div>
-        <div class="input-row">
-          <label>URL</label>
-          <input type="url" value="http://example.com" id='url-field'>
-        </div>
-        <div class="input-row">
-          <label class='long'>Generated Password</label>
-          <input type="text" placeholder='890abcef' id='hash-field' readonly="true">
-        </div>
-      </form>
-      <div class="content-padded">
-        <p id='site-hint'></p>
-        <ul class="table-view">
-          <li class="table-view-cell">
-            Legacy Mode
-            <div class="toggle" id='legacyToggle'>
-              <div class="toggle-handle"></div>
+      <div class="row">
+        <div class='col-md-12'>
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-xs-3 col-md-1 control-label">Master Password</label>
+              <div class="col-xs-9 col-md-11">
+                <input type="password" class="form-control" id="master-password-field" placeholder="Password">
+              </div>
             </div>
-          </li>
-        </ul>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-xs-3 col-md-1 control-label">URL</label>
+              <div class="col-xs-9 col-md-11">
+                <input type="url" class="form-control" id="url-field" placeholder="http://facebook.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-xs-3 col-md-1 control-label">Generated Password</label>
+              <div class="col-xs-9 col-md-11">
+                <input type="text" class="form-control" id="hash-field" placeholder="e7a-c07-866-68e">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="checkbox pull-right">
+                  <label>
+                    <input type="checkbox" id="legacyToggle"> Legacy Mode
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </div><!-- /.container -->
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/ratchet/dist/js/ratchet.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="../bower_components/urijs/src/URI.js"></script>
     <script src="../bower_components/crypto-js/core.js"></script>
     <script src="../bower_components/crypto-js/sha256.js"></script>

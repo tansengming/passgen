@@ -14,7 +14,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      title: 'Passgen',
+      hash: true,
+      template: './src/index.html',
+      filename: './index.html'
     })
   ],
   output: {

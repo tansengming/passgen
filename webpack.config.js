@@ -19,10 +19,6 @@ module.exports = {
       hash: true,
       template: './src/index.html',
       filename: './index.html'
-    }),
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
     })
   ],
   output: {

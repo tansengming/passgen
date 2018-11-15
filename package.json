@@ -19,7 +19,7 @@
     "express": "",
     "file-loader": "",
     "html-webpack-plugin": "",
-    "jquery": "",
+    "jquery": "^3.3.1",
     "style-loader": "",
     "urijs": "^1.19.1",
     "webpack": "^4.25.0",

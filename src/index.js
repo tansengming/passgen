@@ -1,3 +1,5 @@
+import URI from 'urijs'
+
 var legacyMode, niceSitename, password, saveToLocalstorage, sitename, updateHash;
 
 Helper = {

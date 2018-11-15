@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
@@ -18,6 +19,10 @@ module.exports = {
       hash: true,
       template: './src/index.html',
       filename: './index.html'
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     })
   ],
   output: {

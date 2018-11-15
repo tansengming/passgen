@@ -19,6 +19,7 @@
     "express": "",
     "file-loader": "",
     "html-webpack-plugin": "",
+    "jquery": "",
     "style-loader": "",
     "webpack": "^4.25.0",
     "webpack-cli": "",

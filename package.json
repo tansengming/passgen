@@ -15,6 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "",
+    "crypto-js": "^3.1.9-1",
     "css-loader": "",
     "express": "",
     "file-loader": "",

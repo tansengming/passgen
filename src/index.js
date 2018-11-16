@@ -1,9 +1,10 @@
 import $ from 'jquery'
 import URI from 'urijs'
+import CryptoJS from 'crypto-js'
 
 var legacyMode, niceSitename, password, saveToLocalstorage, sitename, updateHash;
 
-Helper = {
+var Helper = {
   url_val: function(url) {
     return URI(url).domain().toLowerCase();
   },

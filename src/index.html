@@ -29,60 +29,53 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Passgen</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#about" data-toggle="modal" data-target="#about">About</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        Passgen
+      </a>
+      <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#about" data-toggle="modal" data-target="#about">
+              About
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
 
     <div class="container-fluid">
-      <div class="starter-template">
-        <p class="">Use a master password to generate passwords for all sites</p>
-      </div>
-
       <div class="row">
-        <div class='col-md-12'>
-          <form class="form-horizontal">
+        <div class='col'>
+          <p class="">Use a master password to generate passwords for all sites</p>
+          <form>
             <div class="form-group">
-              <label for="inputEmail3" class="col-xs-3 col-md-1 control-label">Master Password</label>
-              <div class="col-xs-9 col-md-11">
-                <input type="password" class="form-control" id="master-password-field" placeholder="Password">
-              </div>
+              <label for="master-password-field">Master Password</label>
+              <input type="password" class="form-control" id="master-password-field" placeholder="Password">
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                This is saved locally and will never be sent to a server
+              </small>
             </div>
             <div class="form-group">
-              <label for="inputPassword3" class="col-xs-3 col-md-1 control-label">URL</label>
-              <div class="col-xs-9 col-md-11">
-                <input type="url" class="form-control" id="url-field" placeholder="http://facebook.com">
-              </div>
+              <label for="url-field">URL</label>
+              <input type="url" class="form-control" id="url-field" placeholder="e.g. https://facebook.com">
+              <small id="url-help-block" class="form-text text-muted">
+              </small>
             </div>
             <div class="form-group">
-              <label for="inputPassword3" class="col-xs-3 col-md-1 control-label">Generated Password</label>
-              <div class="col-xs-9 col-md-11">
-                <input type="text" class="form-control" id="hash-field" placeholder="e7a-c07-866-68e">
-              </div>
+              <label for="inputPassword3">Generated Password</label>
+              <input type="text" class="form-control" id="hash-field" placeholder="e7a-c07-866-68e">
+              <small id="site-hint" class="form-text text-muted">
+              </small>
             </div>
-            <p id='site-hint' class="small"></p>
-            <div class="form-group">
-              <div class="col-xs-12">
-                <div class="btn-group pull-right" data-toggle="buttons">
-                  <label class="btn btn-default">
-                    <input type="checkbox" autocomplete="off" id="legacyToggle"> Legacy Mode
-                  </label>
-                </div>
-              </div>
+
+            <div class="form-group btn-group-toggle"  data-toggle="buttons">
+              <label class="btn btn-primary" for="legacyToggle">
+                <input type="checkbox" autocomplete="off" id="legacyToggle"> Legacy Mode
+              </label>
             </div>
           </form>
         </div>

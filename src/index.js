@@ -41,9 +41,10 @@ updateHash = function() {
   hasher = legacyMode() ? Helper.md5_hash : Helper.sha256_hash;
   $('#hash-field').val(hasher(password(), niceSitename()));
   if (niceSitename()) {
-    return $('#site-hint').html('Generated from ' + niceSitename());
+    $('#url-help-block').html('')
+    return $('#site-hint').html('Generated for ' + niceSitename());
   } else {
-    return $('#site-hint').html('Please enter a valid URL');
+    return $('#url-help-block').html('Please enter a valid URL');
   }
 };
 

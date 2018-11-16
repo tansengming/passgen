@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" manifest='manifest.appcache'>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Sets initial viewport load and disables zooming  -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>Passgen</title>
 
@@ -18,75 +17,64 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-precomposed.png">
 
-    <link rel="stylesheet" href="styles/vendor.css">
-
-    <link rel="stylesheet" href="styles/main.css">
-
-    <script src="scripts/heads.js"></script>
-
+    <!--
     <script>
         var _gaq=[['_setAccount','UA-2279020-7'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
         g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
-  </head>
+    -->
+  <link rel="shortcut icon" href="/favicon.ico"></head>
 
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Passgen</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#about" data-toggle="modal" data-target="#about">About</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        Passgen
+      </a>
+      <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#about" data-toggle="modal" data-target="#about">
+              About
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
 
     <div class="container-fluid">
-      <div class="starter-template">
-        <p class="">Use a master password to generate passwords for all sites</p>
-      </div>
-
       <div class="row">
-        <div class='col-md-12'>
-          <form class="form-horizontal">
+        <div class='col'>
+          <p class="">Use a master password to generate passwords for all sites</p>
+          <form>
             <div class="form-group">
-              <label for="inputEmail3" class="col-xs-3 col-md-1 control-label">Master Password</label>
-              <div class="col-xs-9 col-md-11">
-                <input type="password" class="form-control" id="master-password-field" placeholder="Password">
-              </div>
+              <label for="master-password-field">Master Password</label>
+              <input type="password" class="form-control" id="master-password-field" placeholder="Password">
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                This is saved locally and will never be sent to a server
+              </small>
             </div>
             <div class="form-group">
-              <label for="inputPassword3" class="col-xs-3 col-md-1 control-label">URL</label>
-              <div class="col-xs-9 col-md-11">
-                <input type="url" class="form-control" id="url-field" placeholder="http://facebook.com">
-              </div>
+              <label for="url-field">URL</label>
+              <input type="url" class="form-control" id="url-field" placeholder="e.g. https://facebook.com">
+              <small id="url-help-block" class="form-text text-muted">
+              </small>
             </div>
             <div class="form-group">
-              <label for="inputPassword3" class="col-xs-3 col-md-1 control-label">Generated Password</label>
-              <div class="col-xs-9 col-md-11">
-                <input type="text" class="form-control" id="hash-field" placeholder="e7a-c07-866-68e">
-              </div>
+              <label for="inputPassword3">Generated Password</label>
+              <input type="text" class="form-control" id="hash-field" placeholder="e7a-c07-866-68e">
+              <small id="site-hint" class="form-text text-muted">
+              </small>
             </div>
-            <p id='site-hint' class="small"></p>
-            <div class="form-group">
-              <div class="col-xs-12">
-                <div class="btn-group pull-right" data-toggle="buttons">
-                  <label class="btn btn-default">
-                    <input type="checkbox" autocomplete="off" id="legacyToggle"> Legacy Mode
-                  </label>
-                </div>
-              </div>
+
+            <div class="form-group btn-group-toggle"  data-toggle="buttons">
+              <label class="btn btn-primary" for="legacyToggle">
+                <input type="checkbox" autocomplete="off" id="legacyToggle"> Legacy Mode
+              </label>
             </div>
           </form>
         </div>
@@ -98,37 +86,25 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="myModalLabel">About</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           </div>
           <div class="modal-body">
             <p>
                 This is adapted from <a href='http://angel.net/~nic/passwd.html'>Nic Wolff's Password Generator</a> so perhaps its best if I let him explain what it is.
             </p>
-            <p>
-              <blockquote>
+              <blockquote class='blockquote'>
                   <p><em>I hate passwords.</em> I mean, I don&#39;t mind having really important ones be made-up and memorized but what about all those e-commerce and community sites that want me to create accounts? I end up using the same password at all of them and then I feel stupid knowing that one SQL Server exploit or disgruntled admin could cost me my whole identity.</p>
                   <p>So, this is a little Javascript program that will concatenate two fields and MD5 them. The idea is that you choose one master password to secure all your others, and then generate passwords for each site, server, router, &amp;c. by putting a completely obvious name for that resource in the "Site name" field.</p>
                   <p>Then just hit <i>return</i> and copy your new password so you can paste it into whatever site you&#39;re registering at. It&#39;ll be different for every site, and undiscoverable by anyone who doesn&#39;t know your master password &#151; but you can always retrieve it by simply using this form again.</p>
                   <p>(Note that all this is done by your browser running the program that's in the source of this page; nothing is passed back to my server. You can make your own local copy of this page, use it off-line, &c.)</p>
               </blockquote>
-            </p>
-            <p>
-                The theme is <a href='https://github.com/mportuga/bootstrap-ios'>Marcelo Portugal's Bootstrap Spaceship - An ode to iOS</a>
-            </p>
             <p>
                 The source for this site is <a href='https://github.com/tansengming/passgen'>available on Github</a>.
             </p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
         </div>
       </div>
     </div>
-
-    <script src="scripts/vendor.js"></script>
-
-    <script src="scripts/scripts.js"></script>
-  </body>
+  <script type="text/javascript" src="/app.bundle.js?444773daeea8cb44d479"></script></body>
 </html>

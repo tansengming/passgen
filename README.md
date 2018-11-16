@@ -19,3 +19,5 @@ There's also a deprecated version [made with jQuery Mobile](https://github.com/t
 1. `npm run start`
 
 Voila! The app should now be running at http://localhost:8080/
+
+Run `npm run build` to build the production copy at `./dist` which you can then copy to the `gh-pages` branch

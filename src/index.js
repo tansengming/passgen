@@ -2,6 +2,7 @@ import $ from 'jquery'
 import URI from 'urijs'
 import CryptoJS from 'crypto-js'
 import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.css'
 
 var legacyMode, niceSitename, password, saveToLocalstorage, sitename, updateHash;

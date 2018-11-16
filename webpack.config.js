@@ -24,7 +24,9 @@ module.exports = {
       favicon: './src/favicon.ico'
     }),
     new CopyWebpackPlugin([
-        {from: 'src/images', to: 'images'}
+        {from: 'src/images', to: 'images'},
+        {from: 'src/robots.txt', to: '.'},
+        {from: 'src/404.html', to: '.'}
     ]),
     new webpack.HotModuleReplacementPlugin()
   ],

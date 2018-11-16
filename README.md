@@ -16,8 +16,6 @@ There's also a deprecated version [made with jQuery Mobile](https://github.com/t
 ## Development Quickstart
 
 1. `npm install`
-1. `./node_modules/bower/bin/bower install`
-1. `cd bower_components/modernizr && npm install && ./bin/modernizr -c lib/config-all.json`
-1. `./node_modules/gulp/bin/gulp.js watch`
+1. `npm run start`
 
-Voila! The app should now be running at http://localhost:9000/
+Voila! The app should now be running at http://localhost:8080/

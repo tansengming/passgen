@@ -28,13 +28,9 @@ module.exports = {
         clientsClaim: true,
         skipWaiting: true,
         runtimeCaching: [
-            // {
-            //     urlPattern: new RegExp('http://localhost:8080'),
-            //     handler: 'staleWhileRevalidate'
-            // },
             {
-                urlPattern: new RegExp('https://tansengming.github.io'),
-                handler: 'staleWhileRevalidate'
+                urlPattern: /main\.bundle\.js/,
+                handler: 'networkFirst',
             }
         ]
     })

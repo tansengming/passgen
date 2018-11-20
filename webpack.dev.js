@@ -8,10 +8,5 @@ module.exports = merge(common, {
   devServer: {
     contentBase: './dist',
     hot: true
-  },
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
   }
 });

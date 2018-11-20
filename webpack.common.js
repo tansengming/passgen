@@ -29,7 +29,7 @@ module.exports = {
         skipWaiting: true,
         runtimeCaching: [
             {
-                urlPattern: /main\.bundle\.js/,
+                urlPattern: /main\.js/,
                 handler: 'networkFirst',
             }
         ]

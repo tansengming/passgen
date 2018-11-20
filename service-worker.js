@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/passgenprecache-manifest.cee15226ce2d1dd433666285aa63d8ec.js"
+  "/passgen/precache-manifest.8ca5ea5fed6113458668157372f24c0c.js"
 );
 
 workbox.skipWaiting();
@@ -29,4 +29,4 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(/https:\/\/tansengming.github.io/, workbox.strategies.staleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/main\.js/, workbox.strategies.networkFirst(), 'GET');

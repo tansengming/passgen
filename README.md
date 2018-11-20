@@ -1,6 +1,6 @@
 # Password Generator
 
-This is a [tiny one page app](http://tansengming.github.com/passgen) that creates a unique password for your sites based on the site URL and a master password.
+This is a [tiny one page app](https://tansengming.github.com/passgen) that creates a unique password for your sites based on the site URL and a master password.
 
 Since this a mobile version for [Nic Wolff's Password Generator](http://angel.net/~nic/passwd.html) so perhaps its best if I let him explain what it is.
 

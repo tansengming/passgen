@@ -27,7 +27,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "popper.js": "^1.14.5",
     "style-loader": "^0.23.1",
-    "uglifyjs-webpack-plugin": "^2.0.1",
+    "uglifyjs-webpack-plugin": "^2.1.2",
     "urijs": "^1.19.1",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
